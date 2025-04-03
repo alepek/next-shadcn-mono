@@ -34,7 +34,7 @@ export default function RootLayout({
         <Providers>
           <main className="max-w-6xl mx-auto">
             <div className="p-4 pb-8 flex justify-between">
-              <NavigationMenu>
+              <NavigationMenu className="flex gap-2">
                 <Link href="/" legacyBehavior passHref>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                     Home

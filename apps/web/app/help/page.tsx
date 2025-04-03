@@ -25,7 +25,7 @@ export default function Page() {
         <DialogDemo />
       </div>
 
-      <div className="w-6/12 mx-auto">
+      <div className="w-full md:w-6/12 mx-auto">
         <Tabs defaultValue="accordion">
           <TabsList className="grid grid-cols-3 w-full">
             <TabsTrigger value="accordion">Accordion</TabsTrigger>

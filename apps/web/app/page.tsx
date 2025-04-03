@@ -21,7 +21,7 @@ export default function Page() {
           Sonner
         </Button>
       </div>
-      <div className="flex gap-4 justify-between">
+      <div className="flex gap-4 justify-between flex-wrap md:flex-nowrap">
         <ChartExample />
         <ChartExample />
         <ChartExample />

@@ -1,42 +1,48 @@
 import { DialogDemo } from "@/components/dialog-demo";
+import HeroExample from "../../components/hero";
+import StackedExample from "../../components/stacked";
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@workspace/ui/components/accordion";
-import { Button } from "@workspace/ui/components/button";
-import Link from "next/link";
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@workspace/ui/components/tabs";
+import AccordionExample from "../../components/accordion";
+import { Card } from "@workspace/ui/components/card";
 
 export default function Page() {
   return (
-    <div className="flex items-center justify-center max-w-md mx-auto">
-      <div className="flex flex-col items-center justify-center gap-4 w-full">
-        <h1 className="text-2xl font-bold">The help page</h1>
+    <div className="flex flex-col gap-12">
+      <div>
+        <h2 className="text-4xl font-semibold tracking-tight text-pretty sm:text-5xl">
+          Help Center
+        </h2>
+        <p className="mt-2 text-lg/8 ">
+          Find answers to common questions and learn more about our product.
+        </p>
+      </div>
 
-        <Accordion type="single" collapsible className="w-full">
-          <AccordionItem value="item-1">
-            <AccordionTrigger>Is it accessible?</AccordionTrigger>
-            <AccordionContent>
-              Yes. It adheres to the WAI-ARIA design pattern.
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="item-2">
-            <AccordionTrigger>Is it styled?</AccordionTrigger>
-            <AccordionContent>
-              Yes. It comes with default styles that matches the other
-              components&apos; aesthetic.
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="item-3">
-            <AccordionTrigger>Is it animated?</AccordionTrigger>
-            <AccordionContent>
-              Yes. It&apos;s animated by default, but you can disable it if you
-              prefer.
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
+      <div>
         <DialogDemo />
+      </div>
+
+      <div className="w-6/12 mx-auto">
+        <Tabs defaultValue="accordion">
+          <TabsList className="grid grid-cols-3 w-full">
+            <TabsTrigger value="accordion">Accordion</TabsTrigger>
+            <TabsTrigger value="herosection">Hero Section</TabsTrigger>
+            <TabsTrigger value="stackedlist">Stacked List</TabsTrigger>
+          </TabsList>
+          <TabsContent value="accordion">
+            <AccordionExample />
+          </TabsContent>
+          <TabsContent value="herosection">
+            <HeroExample />
+          </TabsContent>
+          <TabsContent value="stackedlist">
+            <StackedExample />
+          </TabsContent>
+        </Tabs>
       </div>
     </div>
   );

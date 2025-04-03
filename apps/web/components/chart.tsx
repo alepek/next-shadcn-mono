@@ -39,7 +39,7 @@ const chartConfig = {
 
 export function ChartExample() {
   return (
-    <Card>
+    <Card className="w-full">
       <CardHeader>
         <CardTitle>Bar Chart - Multiple</CardTitle>
         <CardDescription>January - June 2024</CardDescription>

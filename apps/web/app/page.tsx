@@ -1,17 +1,29 @@
 "use client";
 import { ChartExample } from "@/components/chart";
 import { Button } from "@workspace/ui/components/button";
-import Link from "next/link";
 import { toast } from "sonner";
 
 export default function Page() {
   return (
-    <div className="flex items-center justify-center max-w-lg mx-auto">
-      <div className="flex flex-col items-center justify-center gap-4">
-        <h1 className="text-2xl font-bold">The home page</h1>
+    <div className="flex flex-col gap-12">
+      <div>
+        <h2 className="text-4xl font-semibold tracking-tight text-pretty sm:text-5xl">
+          Home 🏡
+        </h2>
+        <p className="mt-2 text-lg/8 ">
+          Welcome to the home page! Here you can find all the latest news and
+          updates.
+        </p>
+      </div>
+
+      <div>
         <Button size="sm" onClick={() => toast("Hey hey")}>
           Sonner
         </Button>
+      </div>
+      <div className="flex gap-4 justify-between">
+        <ChartExample />
+        <ChartExample />
         <ChartExample />
       </div>
     </div>

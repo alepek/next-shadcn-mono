@@ -33,7 +33,7 @@ export default function RootLayout({
       >
         <Providers>
           <main className="max-w-6xl mx-auto">
-            <div className="p-4 pb-8 flex justify-between">
+            <div className="p-4 flex justify-between">
               <NavigationMenu className="flex gap-2">
                 <Link href="/" legacyBehavior passHref>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
@@ -48,7 +48,7 @@ export default function RootLayout({
               </NavigationMenu>
               <DarkModeToggle />
             </div>
-            {children}
+            <div className="p-4">{children}</div>
           </main>
         </Providers>
         <Toaster />

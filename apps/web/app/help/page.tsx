@@ -1,3 +1,4 @@
+import { DialogDemo } from "@/components/dialog-demo";
 import {
   Accordion,
   AccordionContent,
@@ -35,6 +36,7 @@ export default function Page() {
             </AccordionContent>
           </AccordionItem>
         </Accordion>
+        <DialogDemo />
       </div>
     </div>
   );

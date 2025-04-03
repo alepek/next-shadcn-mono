@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 const people = [
   {
     name: "Leslie Alexander",
@@ -55,7 +56,7 @@ const people = [
 
 export default function StackedExample() {
   return (
-    <ul role="list" className="divide-y ">
+    <ul role="list" className="divide-y">
       {people.map((person) => (
         <li key={person.email} className="flex justify-between gap-x-6 py-5">
           <div className="flex min-w-0 gap-x-4">

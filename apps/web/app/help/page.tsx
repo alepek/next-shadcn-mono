@@ -8,7 +8,6 @@ import {
   TabsTrigger,
 } from "@workspace/ui/components/tabs";
 import AccordionExample from "../../components/accordion";
-import { Card } from "@workspace/ui/components/card";
 
 export default function Page() {
   return (

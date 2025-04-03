@@ -1,0 +1,8 @@
+{
+  "eslint.nodePath": "packages/eslint-config",
+  "eslint.workingDirectories": [
+    { "pattern": "./packages/*/" },
+    { "pattern": "./apps/*/" },
+    { "directory": "./apps/web", "changeProcessCWD": true }
+  ]
+}

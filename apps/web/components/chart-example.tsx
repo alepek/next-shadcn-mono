@@ -15,7 +15,7 @@ import {
   ChartTooltipContent,
 } from "@workspace/ui/components/chart";
 import { TrendingUp } from "lucide-react";
-import { Bar, BarChart, CartesianGrid, XAxis } from "recharts";
+const { Bar, BarChart, CartesianGrid, XAxis } = await import("recharts");
 
 const chartData = [
   { month: "January", desktop: 186, mobile: 80 },

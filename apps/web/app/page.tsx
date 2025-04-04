@@ -1,5 +1,5 @@
 "use client";
-import { ChartExample } from "@/components/chart";
+import { ChartExample } from "@/components/chart-example";
 import { Button } from "@workspace/ui/components/button";
 import { toast } from "sonner";
 

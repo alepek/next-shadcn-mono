@@ -14,7 +14,6 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@workspace/ui/components/chart";
-import { Spinner } from "@workspace/ui/components/spinner";
 import { TrendingUp } from "lucide-react";
 
 const chartData = [

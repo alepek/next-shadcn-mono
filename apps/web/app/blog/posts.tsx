@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import BlogPost, { Post } from "./post";
 
 export default async function BlogPosts() {

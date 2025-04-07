@@ -8,25 +8,10 @@ export interface Post {
 }
 
 interface BlogPostProps {
-  post?: Post;
+  post: Post;
 }
 
 export default function BlogPost({ post }: BlogPostProps) {
-  if (!post) {
-    return (
-      <article className="flex max-w-xl flex-col items-start justify-between rounded-md p-4">
-        <div className="flex items-center gap-x-4 text-xs text-muted-foreground">
-          <div className="animate-pulse h-3 w-16 bg-accent rounded-md"></div>
-          <div className="animate-pulse h-3 w-20 bg-accent rounded-md"></div>
-        </div>
-        <div className="group relative">
-          <div className="animate-pulse mt-5 h-4 w-48 bg-accent rounded-md"></div>
-          <div className="animate-pulse mt-6 h-3 w-64 bg-accent rounded-md"></div>
-        </div>
-      </article>
-    );
-  }
-
   return (
     <a href="#" key={post.id}>
       <article className="flex max-w-xl flex-col items-start justify-between hover:bg-accent rounded-md p-4">

@@ -1,8 +1,9 @@
-export const dynamic = "force-dynamic";
 import BlogPost, { Post } from "./post";
 
 export default async function BlogPosts() {
-  const data = await fetch("https://api.vercel.app/blog");
+  const data = await fetch("https://api.vercel.app/blog", {
+    cache: "no-store",
+  });
   const posts: Post[] = await data.json();
 
   return posts.map((post) => <BlogPost post={post} key={post.id} />);

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export interface Post {
   id: number;
   title: string;
@@ -11,9 +13,18 @@ interface BlogPostProps {
   post: Post;
 }
 
+export function BlogPostSkeleton() {
+  return (
+    <article className="flex max-w-xl flex-col items-start justify-between hover:bg-accent rounded-md p-4">
+      <div className="animate-pulse h-4 w-64 bg-accent rounded-md"></div>
+      <div className="animate-pulse h-6 mt-5 w-64 bg-accent rounded-md"></div>
+    </article>
+  );
+}
+
 export default function BlogPost({ post }: BlogPostProps) {
   return (
-    <a href="#" key={post.id}>
+    <Link href={`/blog/${post.id}`} key={post.id}>
       <article className="flex max-w-xl flex-col items-start justify-between hover:bg-accent rounded-md p-4">
         <div className="flex items-center gap-x-4 text-xs text-muted-foreground">
           <time dateTime={post.date}>{post.date}</time>
@@ -35,6 +46,6 @@ export default function BlogPost({ post }: BlogPostProps) {
           </div>
         </div>
       </article>
-    </a>
+    </Link>
   );
 }

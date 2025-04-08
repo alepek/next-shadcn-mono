@@ -7,5 +7,7 @@ export default async function BlogPosts() {
   });
   const posts: Post[] = await data.json();
 
-  return posts.map((post) => <BlogPost post={post} key={post.id} />);
+  return posts.map((post) => (
+    <BlogPost basePath="with-rsc" post={post} key={post.id} />
+  ));
 }

@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 
 export default function BlogPage() {
   const { data, isLoading } = useQuery({
-    queryKey: ["blog-posts"],
+    queryKey: ["all-blog-posts"],
     queryFn: async () => {
       const response = await fetch("/api/blog");
       return response.json();
@@ -14,7 +14,7 @@ export default function BlogPage() {
   return (
     <div className="mx-auto w-full">
       <h2 className="text-4xl font-semibold tracking-tight text-pretty sm:text-5xl">
-        From the blog
+        From the Tanstack blog
       </h2>
       <p className="mt-2 text-lg/8 ">
         This page is using Tanstack Query and is loading data on the client.
@@ -28,7 +28,7 @@ export default function BlogPage() {
           </>
         )}
         {data?.posts.map((post: Post) => (
-          <BlogPost key={post.id} post={post} />
+          <BlogPost basePath="/with-tanstack-query" key={post.id} post={post} />
         ))}
       </div>
     </div>

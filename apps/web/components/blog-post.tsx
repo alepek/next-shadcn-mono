@@ -11,6 +11,7 @@ export interface Post {
 
 interface BlogPostProps {
   post: Post;
+  basePath: string;
 }
 
 export function BlogPostSkeleton() {
@@ -22,9 +23,9 @@ export function BlogPostSkeleton() {
   );
 }
 
-export default function BlogPost({ post }: BlogPostProps) {
+export default function BlogPost({ post, basePath }: BlogPostProps) {
   return (
-    <Link href={`/blog/${post.id}`} key={post.id}>
+    <Link href={`/blog/${basePath}/${post.id}`} key={post.id}>
       <article className="flex max-w-xl flex-col items-start justify-between hover:bg-accent rounded-md p-4">
         <div className="flex items-center gap-x-4 text-xs text-muted-foreground">
           <time dateTime={post.date}>{post.date}</time>

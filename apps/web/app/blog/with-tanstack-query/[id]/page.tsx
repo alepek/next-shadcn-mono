@@ -8,7 +8,7 @@ export default function BlogPostPage() {
   const id = params.id as string;
 
   const { data, isLoading } = useQuery({
-    queryKey: ["single-blog-post"],
+    queryKey: [`single-blog-post-${id}`],
     queryFn: async () => {
       const response = await fetch(`/api/blog/${id}`);
       return response.json();

@@ -8,26 +8,42 @@ import {
 } from "@workspace/ui/components/chart";
 import { Card, CardHeader, CardTitle } from "@workspace/ui/components/card";
 import { CartesianGrid, Area, AreaChart, Text } from "recharts";
+import { useMemo } from "react";
+
+type GraphData = {
+  date: string;
+  commits: number;
+};
 
 export function CommitChart({
   commitDataList,
 }: {
   commitDataList?: CommitData[];
 }) {
-  const formattedData = commitDataList?.flatMap((commitData) =>
-    commitData.days.map((commits, index) => {
-      const date = new Date(commitData.week * 1000);
-      date.setDate(date.getDate() + index);
-      return {
-        date: date.toLocaleDateString("en-US", {
-          weekday: "long",
-          month: "long",
-          day: "numeric",
-        }),
-        commits,
-      };
-    })
-  );
+  const formattedData = useMemo(() => {
+    let data: GraphData[] = [];
+    try {
+      if (commitDataList) {
+        data = commitDataList.flatMap((commitData) =>
+          commitData.days.map((commits, index) => {
+            const date = new Date(commitData.week * 1000);
+            date.setDate(date.getDate() + index);
+            return {
+              date: date.toLocaleDateString("en-US", {
+                weekday: "long",
+                month: "long",
+                day: "numeric",
+              }),
+              commits,
+            };
+          })
+        );
+      }
+    } catch {
+      data = [];
+    }
+    return data;
+  }, [commitDataList]);
 
   return (
     <Card className="h-[10rem] w-full pb-0 gap-2">

@@ -21,6 +21,11 @@ export default function RootNavBar() {
             Home
           </NavigationMenuLink>
         </Link>
+        <Link href="/stats" passHref legacyBehavior>
+          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            Stats
+          </NavigationMenuLink>
+        </Link>
         <NavigationMenuList>
           <NavigationMenuItem>
             <NavigationMenuTrigger>Blogs</NavigationMenuTrigger>

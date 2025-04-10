@@ -1,5 +1,4 @@
 "use client";
-import { ChartExample } from "@/components/chart-example";
 import { Button } from "@workspace/ui/components/button";
 import { toast } from "sonner";
 
@@ -20,11 +19,6 @@ export default function Page() {
         <Button size="sm" onClick={() => toast("Hey hey")}>
           Sonner
         </Button>
-      </div>
-      <div className="flex gap-4 justify-between flex-wrap md:flex-nowrap">
-        <ChartExample />
-        <ChartExample />
-        <ChartExample />
       </div>
     </div>
   );

@@ -12,7 +12,8 @@ export function Heading() {
         >
           react cache
         </a>
-        .
+        . You can observe individual blog posts being cached during the same
+        session.
       </p>
     </>
   );

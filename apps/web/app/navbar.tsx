@@ -43,7 +43,17 @@ export default function RootNavBar() {
                   </div>
                   <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                     This example loads the blog posts using Tanstack Query on
-                    the client.
+                    the client, via trpc.
+                  </p>
+                </NavigationMenuLink>
+              </Link>
+              <Link href="/blog/with-trpc-ssr" legacyBehavior passHref>
+                <NavigationMenuLink>
+                  <div className="text-sm font-medium leading-none">
+                    With trpc SSR
+                  </div>
+                  <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                    This example uses trpc on the server.
                   </p>
                 </NavigationMenuLink>
               </Link>

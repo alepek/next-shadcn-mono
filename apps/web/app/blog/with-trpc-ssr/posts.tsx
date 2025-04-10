@@ -1,5 +1,5 @@
 import BlogPost from "@/components/blog-post";
-import { caller } from "@/trpc/server-caller";
+import { caller } from "@/trpc/server";
 
 export default async function BlogPagePosts() {
   const posts = await caller.listPosts();

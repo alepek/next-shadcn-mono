@@ -1,19 +1,14 @@
 "use client";
+import { useTRPC } from "@/trpc/client";
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "next/navigation";
 
 export default function BlogPostPage() {
   const params = useParams();
+  const trpc = useTRPC();
+  const id = parseInt(params.id as string);
 
-  const id = params.id as string;
-
-  const { data, isLoading } = useQuery({
-    queryKey: [`single-blog-post-${id}`],
-    queryFn: async () => {
-      const response = await fetch(`/api/blog/${id}`);
-      return response.json();
-    },
-  });
+  const { data, isLoading } = useQuery(trpc.getPost.queryOptions(id));
 
   if (isLoading) {
     return (
@@ -27,9 +22,9 @@ export default function BlogPostPage() {
   return (
     <div className="mx-auto w-full">
       <h2 className="text-2xl font-semibold tracking-tight text-pretty sm:text-3xl">
-        {data.post.title}
+        {data?.title}
       </h2>
-      <p className="mt-2 text-lg/8 ">{data.post.content}</p>
+      <p className="mt-2 text-lg/8 ">{data?.content}</p>
     </div>
   );
 }

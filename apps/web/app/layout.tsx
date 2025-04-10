@@ -30,8 +30,8 @@ export default function RootLayout({
             <RootNavBar />
             <div className="p-4">{children}</div>
           </main>
+          <Toaster />
         </Providers>
-        <Toaster />
       </body>
     </html>
   );

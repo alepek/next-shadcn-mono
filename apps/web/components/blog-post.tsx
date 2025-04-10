@@ -1,13 +1,5 @@
+import { Post } from "@/trpc/router";
 import Link from "next/link";
-
-export interface Post {
-  id: number;
-  title: string;
-  content: string;
-  author: string;
-  date: string;
-  category: string;
-}
 
 interface BlogPostProps {
   post: Post;

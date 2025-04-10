@@ -1,4 +1,5 @@
-import BlogPost, { Post } from "@/components/blog-post";
+import BlogPost from "@/components/blog-post";
+import { Post } from "@/trpc/router";
 
 export default async function BlogPosts() {
   const data = await fetch("https://api.vercel.app/blog", {
